@@ -1,18 +1,26 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './components/Header'
+import Board from './components/Board';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <Header />
+        <section>
+          <div className='board'>
+            <div className='board__form container'>
+              <form>
+                <div className='form'>
+                  <input ref='newItem' className='form__text' type='text' placeholder='Add new item...' />
+                  <button className='form__submit' type='submit'>Add new</button>
+                </div>
+              </form>
+            </div>
+            <Board />
+          </div>
+        </section>
       </div>
     );
   }
