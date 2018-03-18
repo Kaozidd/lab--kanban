@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Board from './components/Board';
 
 class App extends Component {
-  constructor(props) {
+  constructor() {
     super();
     this.state = {
       value: ''
