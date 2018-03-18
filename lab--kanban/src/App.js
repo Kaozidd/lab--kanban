@@ -11,11 +11,17 @@ class App extends Component {
     }
   }
   handleChange = (e) => {
-    this.setState({value: e.target.value})
+    this.setState({
+      value: e.target.value
+    });
   }
   addCard = (e) => {
     e.preventDefault();
-    console.log(this.state.value)
+    const val = this.state.value;
+    console.log(val);
+    this.setState({
+      value: ''
+    })
   }
   render() {
     return (
@@ -31,7 +37,8 @@ class App extends Component {
                     type='text' 
                     placeholder='Add new item...'
                     value={this.state.value}
-                    onChange={this.handleChange} />
+                    onChange={this.handleChange} 
+                    onSubmit={this.reset}/>
                   <button className='form__submit' type='submit'>Add new</button>
                 </div>
               </form>
