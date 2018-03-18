@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import List from './List';
 
 class Board extends Component {
-  render() {
-    return (
-      <div className='container grid'>
-        <List />
-      </div>
-    );
-  }
+ 	render() {
+ 		const data = this.props.data
+    	return (
+      		<div className='container grid'>
+        		<List data={data}/>
+      		</div>
+    	);
+  	}
 }
 
 export default Board;

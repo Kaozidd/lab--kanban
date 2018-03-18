@@ -11,8 +11,10 @@ class List extends Component {
   	}
   	render() {
   		const data = this.state.data[0];
-  		const addToList = data.tasks
-  		console.log(addToList)
+  		data.tasks.push({
+  			title: this.props.data,
+  			tagged: '.client'
+  		})
     	return (
       	<article className='card'>
         	<header>
@@ -21,7 +23,7 @@ class List extends Component {
               	<span className='card__quantity'>`{data.tasks.length} tasks`</span>
             	</div>
             <ul className='card__content'>
-            	{addToList.map(function(card){
+            	{data.tasks.map(function(card){
             		return <Card data={card}/>
 				})}
             </ul>

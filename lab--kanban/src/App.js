@@ -7,7 +7,8 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      value: ''
+      value: '',
+      card: ''
     }
   }
   handleChange = (e) => {
@@ -17,11 +18,10 @@ class App extends Component {
   }
   addCard = (e) => {
     e.preventDefault();
-    const val = this.state.value;
-    console.log(val);
     this.setState({
-      value: ''
+      card: this.state.value
     })
+    console.log(this.state.card)
   }
   render() {
     return (
@@ -43,7 +43,7 @@ class App extends Component {
                 </div>
               </form>
             </div>
-            <Board />
+            <Board data={this.state.card} />
           </div>
         </section>
       </div>
